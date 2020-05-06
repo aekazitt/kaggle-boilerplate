@@ -29,7 +29,7 @@ async def main():
   ### Initiate Pickler Instance ###
   pickler = Pickler.get_instance()
   welcome_msg = await pickler.load('welcome_msg') or 'Hello, World!'
-  await pickler.save('welcome_msg', welcome_msg)
+  await pickler.save(welcome_msg, 'welcome_msg')
   await logger.infoSuccess(welcome_msg)
   AsyncLogger.release_instance()
   Pickler.release_instance()
